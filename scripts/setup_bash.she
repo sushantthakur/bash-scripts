@@ -1,0 +1,51 @@
+#!/bin/bash
+# This script needs to called for creating new bash script  with default template
+filedir="/tmp"
+check_file() {
+if [ $# -ne 1 ]
+then
+	echo -e "Invalid arguments.\n "
+	prompt_filename $1
+else 
+	create_file $1
+fi
+}
+
+prompt_filename() {
+echo -e "Please provide the filename \n"
+read filename
+create_file $filename
+}
+create_file() {
+filen=${filedir}/$1.sh
+echo " filename $filen"
+echo "#!/bin/bash" >>$filen
+echo "################################ Header Begin ######################################################" >>$filen.sh
+echo "#File descriptioa"n >>$filen.sh
+echo "#Created Date : `date`" >>$filen.sh
+echo "#Version: " >>$filen.sh
+echo "#Modified by " >>$filen.sh
+echo "Modified Date ">>$filen.sh
+echo " "
+
+echo "################################ Header End   ######################################################" >>$filen.sh
+
+echo " " >>$filen.sh
+echo " " >>$filen.sh
+echo " " >>$filen.sh
+echo " " >>$filen.sh
+echo " " >>$filen.sh
+echo " " >>$filen.sh
+echo "################################ Code  Begin   ######################################################" >>$filen.sh
+
+
+
+
+
+echo "#### Main function starts" >>$filen.sh
+
+echo "################################ Code  End     ######################################################" >>$filen.sh
+}
+
+#### main
+check_file $@
