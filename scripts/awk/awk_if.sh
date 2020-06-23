@@ -1,0 +1,1 @@
+ awk 'BEGIN {print "This is the program for checking odd and even numbers in col 2"}{ if ( $2 % 2 == 0 ) { print $2, "is even number" } else { print $2, "is a odd number","\n"}} END { print "This is end of program"}' num.txt
