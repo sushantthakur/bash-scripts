@@ -1,10 +1,10 @@
 Tue Jun 23 14:55:16 2009
 Errors in file /opt/app/oracle/diag/rdbms/db11/db11/trace/db11_ora_14798.trc:
-ORA-00313: open failed for members of log group 3 of thread 1
-ORA-00312: online log 3 thread 1: '/oradata/db11/redo03.log'
+RA-00313: open failed for members of log group 3x of thread x1
+RA-00312: online log 3 thread 1: '/oradata/db11/redo03.log'
 ORA-27037: unable to obtain file status
 Linux Error: 2: No such file or directory
-Additional information: 3
+Additional information: x3
 
 This ins test
 This ins test

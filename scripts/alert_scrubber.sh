@@ -8,18 +8,21 @@
  
 ################################ Header End and Code Begins  ########################################
 export Pattern="ORA-|TNS-" # Please add more patters by adding with | and pattern
-export Line=100 # This will print next 10 lines of code after pattern matching 
+export Line=2 # This will print next 10 lines of code after pattern matching 
 export FileToBeScanned="alert.log"
 DumpDir=/tmp
 export Dt=$(date +'%d-%m-%y-%H-%M-%S')
-export DaysTobeScanned=3
+export DaysTobeScanned=4
 export Date=$(date -v -${DaysTobeScanned}d +"%a %b %d")
 
 OutPutFile="${DumpDir}/Alert_output_${Dt}.dat"
 
-echo $DumpDir 
-echo $OutPutFile 
-echo $Date 
 #### Main function starts
 ################################ Code  End     ######################################################
- awk -v Pat="$Pattern" -v L=$Line -v D="$Date" 'BEGIN{print "This is the begining of code";i=0}{ if ( $0 ~ D ||  i != 0 ) { if ( $0 ~ P && i <= L ) {print $0;i++ }}} END {print "Total Lines printed:"i-1}' $FileToBeScanned > $OutPutFile
+ #awk -v P="$Pattern" -v L=$Line -v D="$Date" 'BEGIN{print " ###############  This is the begining of trimmed alert log #############";i=0;print "\n"}{ if ( $0 ~ D ||  i != 0 ) { if ( $0 ~ P || i <= L ) {print $0,"i="i;i++;k++ } else { print "Resetting counter";i=0}}} END {print P, "\n Total Lines printed:"k-1}' $FileToBeScanned > $OutPutFile
+ awk -v P="$Pattern" -v L=$Line -v D="$Date" 'BEGIN{print " ###############  This is the begining of trimmed alert log #############";i=0;print "\n"}{ if ( $0 ~ D ||  i != 0 ) { if ( $0 ~ P || i <= L )  {print $0,"i="i;i++;k++ } else { print "Resetting counter";i=1}}} END {print "END " "\n Total Lines printed:"k-1}' $FileToBeScanned 
+if [ $? -eq 0 ] ; then
+	echo "Output File : $OutPutFile"
+else
+	echo "Error in scanning alert log"
+fi
