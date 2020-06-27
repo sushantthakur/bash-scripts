@@ -1,0 +1,1 @@
+awk -v Pat="$Pattern" -v L=$Line -v D="$Date" 'BEGIN{print "This is the begining of code";i=0}{ if ((( $0 ~ Pat ) && ( i <= L )) || (( $0 == D ) && ( i <> 0) && ( i <= L )))  {print $0;i++}} END {print i}' alert.log
