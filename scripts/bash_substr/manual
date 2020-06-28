@@ -1,0 +1,8 @@
+Bash substring is also used to print the substring from the give string
+
+stringZ="YOUR-STRING"
+## ${stringZ:P} // P is the starting index
+
+## ${stringZ:P:L} // P is starting and L is the ending
+echo ${stringZ:1} # This will print from Index 1 till end
+echo ${stringZ:1:2} # This will print from index 1 to next 2 char
