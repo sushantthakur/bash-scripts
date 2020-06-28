@@ -1,0 +1,14 @@
+##############   cut -cN-M 
+# This is a cut command which will cut character from Index N to Index M ( Index starts at0 not 1 )
+# take example 
+strinZ="IndiaIsGreat"
+echo ${stringZ}|cut -c6-7
+# This will print Is
+
+# if you so cut -c2- then it will print entire string starting from index 2
+
+
+##############  cut -d <'delimeter'> -f <index#>
+echo "birthday-091216-pics" | cut -d '-' -f 2 ### This will print "091216" if you di -f 3 then it will print "pics"
+
+
