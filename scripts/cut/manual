@@ -1,5 +1,5 @@
 ##############   cut -cN-M 
-# This is a cut command which will cut character from Index N to Index M ( Index starts at0 not 1 )
+# This is a cut command which will cut character from Index N to Index M ( Index starts at 0 not 1 )
 # take example 
 strinZ="IndiaIsGreat"
 echo ${stringZ}|cut -c6-7

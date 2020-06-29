@@ -1,8 +1,65 @@
-Bash substring is also used to print the substring from the give string
-
+echo "Command - 1 "
+echo "Bash substring is also used to print the substring from the give string"
 stringZ="YOUR-STRING"
-## ${stringZ:P} // P is the starting index
-
-## ${stringZ:P:L} // P is starting and L is the ending
+echo ' ${stringZ:P} // P is the starting index'
+echo ' ${stringZ:P:L} // P is starting and L is the ending'
 echo ${stringZ:1} # This will print from Index 1 till end
 echo ${stringZ:1:2} # This will print from index 1 to next 2 char
+
+echo ${#stringZ}  ## This will print the total length of string
+echo
+echo
+echo "Command -2 "
+echo ' Shortest Substring Match #####'
+echo 'Following syntax deletes the shortest  and longest match of $substring from front of $strin'
+
+var="Welcome to the geekstuff"
+echo 'var="Welcome to the geekstuff"'
+
+echo '${string#substring} // This will trim substring from the string from the left or front for the shortest match'
+echo '${string##substring} // This will trim substring from the string from the left or front for the Longest  match'
+
+
+echo '${string%substring} // This will trim the subtring from the right or back for shortest match'
+echo '${string%%substring} // This will trim the subtring from the right or back for longest  match'
+
+echo
+echo
+echo "Command -3"
+
+echo 'Find and Replace String Values inside Bash Shell Script'
+
+echo 'Replace only first match'
+echo '${string/pattern/replacement}'
+
+echo 'Replace all the matches'
+echo '${string//pattern/replacement}'
+
+echo "Pattern Matching with replacement at the begining of string "
+echo 'var=$(pwd)'
+var=$(pwd)
+echo "var : $var"
+var : /Users/sushant/scripts/bash-scripts/bash-scripts/bash-scripts/scripts/bash_substr
+echo ${$var/#\/Users/\/Changed_at_starting}
+echo '${var/#\/Users/\/Changed_at_starting}'
+echo ${var/#\/Users/\/Changed_at_starting}
+echo '/Changed_at_starting/sushant/scripts/bash-scripts/bash-scripts/bash-scripts/scripts/bash_substr'
+
+echo
+echo
+echo "Command - 4"
+
+echo " Using basename and dirname to find the directory path and filename "
+echo 
+
+echo 'var=$(pwd)"/log.log"'
+var=$(pwd)"/log.log"
+echo $var
+
+echo "Printing dirname "
+echo 'dirname $var'
+dirname $var
+
+echo "Printing basename  "
+echo 'basename $var'
+basename $var
